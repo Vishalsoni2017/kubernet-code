@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: myapp-os
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: ssh
+
+  template:
+    metadata:
+      name: os
+      labels:
+        type: ssh
+    spec:
+      containers:
+        - name: centos
+          image: centos
+          command: ["ping","localhost"]
