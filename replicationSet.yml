@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicationset
+
+spec:
+  template:
+    metadata:
+      name: myapp
+      labels:
+        env: dev
+    spec:
+      containers:
+        - name: pingpong
+          image: centos
+          command: ["ping","localhost"]
+
+  replicas: 2
+  selector:
+    matchLabels:
+      env: dev  
+
+    #matchExpressions:
+      #- {key: env, operator: In, values: [qa, dev, uat]}
+      #- {key: domain, operator: NotIn, values: [telecom, banking]}

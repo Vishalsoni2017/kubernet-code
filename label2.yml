@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: lablepod2
+  labels:
+    env: qa
+    domain: banking
+
+spec:
+  containers:
+    - name: pingpong2
+      image: centos
+      command: ["ping","localhost"]

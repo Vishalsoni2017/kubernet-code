@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: nodeselector
+  labels:
+    env: dev
+    domain: telecom
+
+spec:
+  containers:
+    - name: pingpong1
+      image: centos
+      command: ["ping","localhost"]
+
+  nodeSelector:
+    env: dev

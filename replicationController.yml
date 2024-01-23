@@ -1,0 +1,25 @@
+kind: ReplicationController
+apiVersion: v1
+
+metadata:
+  name: replicationcontroller
+  labels:
+    app: myapp
+    type: front-end
+
+spec:
+  template:
+    metadata:
+      name: pingpong
+      labels:
+        env: dev
+
+    spec:
+      containers:
+        - name: pingpongos
+          image: centos
+          command: ["ping","localhost"]
+
+  replicas: 4
+  selector:
+    env: dev

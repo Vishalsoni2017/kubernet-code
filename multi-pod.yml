@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multipod
+  annotations:                    #add annotations
+    owner: vsoni
+    doman: leaning
+    description: multi pod file
+
+spec:
+  containers:
+    - name: pingpong1
+      image: centos
+      command: ["ping","localhost"]
+      env:                            #declear env varibles
+        - name: user
+          value: vishal_soni
+
+    - name: pingpong2
+      image: centos
+      command: ["ping","localhost"]
+
+    - name: infinityloop      #must be in lower case
+      image: ubuntu
+      command: ["/bin/bash","-c","while true; do echo 'Hi soni';done"] #running bash command

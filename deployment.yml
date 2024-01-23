@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploymentserver
+
+spec:
+  template:
+    metadata:
+      name: myapp
+      labels:
+        env: dev
+    spec:
+      containers:
+        - name: tomcat
+          image: tomcat:9-jdk8-corretto
+          
+
+  replicas: 2
+  selector:
+    matchLabels:
+      env: dev  
+
+   

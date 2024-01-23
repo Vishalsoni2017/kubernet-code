@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: soni-pod
+spec:
+  containers:
+    - name: pingpong1
+      image: centos
+      command: ["ping","localhost"]
+    
+    - name: error
+      image: centos
+      command: ["bash"]   #to avoid crushing using bash command use restart policy
+  restartPolicy: Never

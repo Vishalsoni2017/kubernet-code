@@ -1,0 +1,16 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: myserver-single
+  labels:
+    type: ssh
+spec:
+  containers:
+    - name: centos
+      image: centos
+      command: ["ping","localhost"]
+
+    - name: server
+      image: httpd
+      ports:
+        - containerPort: 80
