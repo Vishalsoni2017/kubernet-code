@@ -30,12 +30,27 @@
 29. kubectl scale --replicas=10 rs/metaname_name
 30. kubectl delete rs metaname_name
     <h4>Deployment</h4>
+    kubectl explain deployment
+    kubectl explain deployment --recursive
+    kubectl explain deployment.metadata.name
 32. kubectl describe deployment metaname_name
 33. kubectl set image deployment/metaname_name nignx=nignx:1.4
 34. kubectl edit deployment/metaname_name
 35. kubectl rollout  status deployment/metaname_name
 36. kubectl rollout history  deployment/metaname_name
 37. kubectl delete deployment metaname_name
+38. kubectl rollout undo deploy/metaname_name
+39. kubectl rollout undo deploy/metaname_name --to-revision=1
+40. kubectl rollout pause deployment/hello
+41. kubectl rollout resume deployment/hello
+42. <h4>Networking</h4>
+43. curl localhost:80  -singlepod
+44. curl 10.244.0.61:80  --multipod
+45. minikube ssh
+46. kubectl get svc
+47. minikube service myapp-service --url
+48. curl http://192.168.49.2:30004
+49. kubectl port-forward --address 0.0.0.0 svc/myapp-service 30004:80
     
 
 
