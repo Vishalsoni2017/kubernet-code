@@ -2,22 +2,23 @@
 1. kubectl cluster-info
 2. kubectl get all
 3. kubectl get node
-4. kubectl create -f file_name.yml
-5. kubectl apply -f file_name.yml
-6. kubectl get pod/po/podes
-7. kubectl describe pod/metaname_name
-8. kubectl logs -f metaname_name
-9. kubectl logs -f metaname_name -c continaer_name
-10. kubectl exec metaname_name -c container_name -- command(whoami)
-11. kubectl exec metaname_name -itc container_name -- bash
-12. kubectl get pod metaname_name --show-labels
+4. kubeclt get pod --all-namespaces
+5. kubectl create -f file_name.yml
+6. kubectl apply -f file_name.yml
+7. kubectl get pod/po/podes
+8. kubectl describe pod/metaname_name
+9. kubectl logs -f metaname_name
+10. kubectl logs -f metaname_name -c continaer_name
+11. kubectl exec metaname_name -c container_name -- command(whoami)
+12. kubectl exec metaname_name -itc container_name -- bash
 13. kubectl get pod metaname_name --show-labels
-14. kubectl get pod -l label_name=label_value  e.g (env=qa)
-15. kubectl get pod -l 'label_name in (label_value)'        e.g 'env in (dev,qa)'
-16. kubectl get pod -l 'label_name notin (label_value)'     e.g 'env notin (dev,qa)'
-17. kubectl label pod metaname_name label_name=label_value  e.g type=business  
-18. kubectl label pod metaname_name label_name-
-19. kubectl label node minikube machine=vsoni
+14. kubectl get pod metaname_name --show-labels
+15. kubectl get pod -l label_name=label_value  e.g (env=qa)
+16. kubectl get pod -l 'label_name in (label_value)'        e.g 'env in (dev,qa)'
+17. kubectl get pod -l 'label_name notin (label_value)'     e.g 'env notin (dev,qa)'
+18. kubectl label pod metaname_name label_name=label_value  e.g type=business  
+19. kubectl label pod metaname_name label_name-
+20. kubectl label node minikube machine=vsoni
     <h4>Replication Controller</h4>
 21. kubectl replace -f file_name.yml
 22. kubectl scale --replicas=6 -f file_name.yml
