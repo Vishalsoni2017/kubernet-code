@@ -19,17 +19,19 @@
 18. kubectl label pod metaname_name label_name=label_value  e.g type=business  
 19. kubectl label pod metaname_name label_name-
 20. kubectl label node minikube machine=vsoni
+21. kubectl run redis -l tier=db --image=redis:alpine
+22. kubectl expose pod redis --port=6379 --name redis-service
     <h4>Replication Controller</h4>
-21. kubectl replace -f file_name.yml
-22. kubectl scale --replicas=6 -f file_name.yml
-23. kubectl scale --replicas=10 rc -l label_name=label_value  e.g env=qa
-24. kubectl scale --replicas=2 rc/metaname_name
-25. kubectl edit metaname_name
-26. kubectl delete rc metaname_name
+23. kubectl replace -f file_name.yml
+24. kubectl scale --replicas=6 -f file_name.yml
+25. kubectl scale --replicas=10 rc -l label_name=label_value  e.g env=qa
+26. kubectl scale --replicas=2 rc/metaname_name
+27. kubectl edit metaname_name
+28. kubectl delete rc metaname_name
     <h4>Replication Set</h4>
-28. kubectl get rs
-29. kubectl scale --replicas=10 rs/metaname_name
-30. kubectl delete rs metaname_name
+29. kubectl get rs
+30. kubectl scale --replicas=10 rs/metaname_name
+31. kubectl delete rs metaname_name
     <h4>Deployment</h4>
     kubectl explain deployment
     kubectl explain deployment --recursive
